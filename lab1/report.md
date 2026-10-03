@@ -71,11 +71,68 @@ flowchart TD
 
 ![Diff BPMN](diagrams/diff1.png)
 
-### Diff PNG-файла
+### Diff изменения
 
-На скриншоте показано сравнение PNG-файла после изменения диаграммы. Git определяет PNG как бинарный файл и не показывает изменения построчно.
-
-![Diff PNG](diagrams/diff2.png)
+index 18c4013..fff401f 100644
+--- a/lab1/diagrams/process.bpmn
++++ b/lab1/diagrams/process.bpmn
+@@ -39,10 +39,10 @@
+     </bpmn:task>
+     <bpmn:sequenceFlow id="Flow_1rnjg8z" sourceRef="Activity_0dnanza" targetRef="Activity_1qc5vqq" />
+     <bpmn:task id="Activity_0cqyr5m" name="Открыть автомобиль">
+-        <bpmn:incoming>Flow_02pwtbb</bpmn:incoming>
++        <bpmn:incoming>Flow_169nijc</bpmn:incoming>
+         <bpmn:outgoing>Flow_00ayc1</bpmn:outgoing>
+     </bpmn:task>
+-    <bpmn:sequenceFlow id="Flow_02pwtbb" sourceRef="Activity_1qc5vqq" targetRef="Activity_0cqyr5m" />
++    <bpmn:sequenceFlow id="Flow_02pwtbb" sourceRef="Activity_1qc5vqq" targetRef="Activity_02jwao0" />
+     <bpmn:task id="Activity_1pdtzmk" name="Начать поездку">
+         <bpmn:incoming>Flow_00ayc1</bpmn:incoming>
+         <bpmn:outgoing>Flow_01ph59b</bpmn:outgoing>
+@@ -89,160 +89,177 @@
+         <bpmn:incoming>Flow_0c594hv</bpmn:incoming>
+     </bpmn:endEvent>
+     <bpmn:sequenceFlow id="Flow_0c594hv" sourceRef="Activity_14krupu" targetRef="Event_11ckcs5" />
++    <bpmn:task id="Activity_02jwao0" name="Отправить подтверждение бронирования">
++        <bpmn:incoming>Flow_02pwtbb</bpmn:incoming>
++        <bpmn:outgoing>Flow_169nijc</bpmn:outgoing>
++    </bpmn:task>
++    <bpmn:sequenceFlow id="Flow_169nijc" sourceRef="Activity_02jwao0" targetRef="Activity_0cqyr5m" />
+ </bpmn:process>
+ <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_06eavn5">
+...skipping...
+diff --git a/lab1/diagrams/process.bpmn b/lab1/diagrams/process.bpmn
+index 18c4013..fff401f 100644
+--- a/lab1/diagrams/process.bpmn
++++ b/lab1/diagrams/process.bpmn
+@@ -39,10 +39,10 @@
+     </bpmn:task>
+     <bpmn:sequenceFlow id="Flow_1rnjg8z" sourceRef="Activity_0dnanza" targetRef="Activity_1qc5vqq" />
+     <bpmn:task id="Activity_0cqyr5m" name="Открыть автомобиль">
+-        <bpmn:incoming>Flow_02pwtbb</bpmn:incoming>
++        <bpmn:incoming>Flow_169nijc</bpmn:incoming>
+         <bpmn:outgoing>Flow_00ayc1</bpmn:outgoing>
+     </bpmn:task>
+-    <bpmn:sequenceFlow id="Flow_02pwtbb" sourceRef="Activity_1qc5vqq" targetRef="Activity_0cqyr5m" />
++    <bpmn:sequenceFlow id="Flow_02pwtbb" sourceRef="Activity_1qc5vqq" targetRef="Activity_02jwao0" />
+     <bpmn:task id="Activity_1pdtzmk" name="Начать поездку">
+         <bpmn:incoming>Flow_00ayc1</bpmn:incoming>
+         <bpmn:outgoing>Flow_01ph59b</bpmn:outgoing>
+@@ -89,160 +89,177 @@
+         <bpmn:incoming>Flow_0c594hv</bpmn:incoming>
+     </bpmn:endEvent>
+     <bpmn:sequenceFlow id="Flow_0c594hv" sourceRef="Activity_14krupu" targetRef="Event_11ckcs5" />
++    <bpmn:task id="Activity_02jwao0" name="Отправить подтверждение бронирования">
++        <bpmn:incoming>Flow_02pwtbb</bpmn:incoming>
++        <bpmn:outgoing>Flow_169nijc</bpmn:outgoing>
++    </bpmn:task>
++    <bpmn:sequenceFlow id="Flow_169nijc" sourceRef="Activity_02jwao0" targetRef="Activity_0cqyr5m" />
+ </bpmn:process>
+ <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_06eavn5">
+     <bpmndi:BPMNShape id="Activity_14krupu_di" bpmnElement="Activity_14krupu">
+:
 
 ## 4. Выводы
 
