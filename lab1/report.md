@@ -69,10 +69,6 @@ flowchart TD
 
 На скриншоте показаны изменения, которые были внесены в BPMN-диаграмму.
 
-![Diff BPMN](diagrams/diff1.png)
-
-### Diff изменения
-
 index 18c4013..fff401f 100644
 --- a/lab1/diagrams/process.bpmn
 +++ b/lab1/diagrams/process.bpmn
